@@ -1,0 +1,106 @@
+.contact {
+  flex-direction: column;
+}
+
+.form {
+  width: 80vw;
+  margin: auto;
+  padding: 3rem 2rem;
+}
+
+.field {
+  width: 40vw;
+  display: flex;
+  flex-flow: column;
+  margin: 12px 0;
+}
+
+.field label {
+  margin: 4px 0;
+  font-size: calc(1rem + 0.15vw);
+  color: rgb(41, 86, 145);
+}
+
+::placeholder{
+  color:#6395ca
+}
+
+input,
+select,
+textarea {
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+
+.sendmessage{
+  color: #007bff;
+      border: 1px solid #007bff;
+      display: none;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+}
+
+.errormessage {
+  color: red;
+      display: none;
+      border: 1px solid red;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+}
+
+.message{
+  text-align: center;
+  padding: 2%;
+}
+
+.btn_submit {
+  display: block;
+  cursor: pointer;
+  padding: 2% 5% 2% 5%;
+  font-weight: 200;
+  font-size: calc(.5rem + .5vw);
+  text-transform: lowercase;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn_submit{
+  background-color: #FEC930;
+  color:#3f0cd8;
+}
+
+.btn_submit {
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn_submit:hover,
+.btn_submit:focus {
+  /* color: var(--clr-bg); */
+  color: #23283e;
+}
+
+.btn_submit:before {
+  content: '';
+  position: absolute;
+  background-color: var(--clr-primary);
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: right 0.2s ease-in-out;
+}
+
+.btn_submit:hover:before,
+.btn_submit:focus:before {
+  right: 0;
+}

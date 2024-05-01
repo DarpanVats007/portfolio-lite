@@ -1,0 +1,13 @@
+.projects__grid {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+
+@media (max-width: 714px) {
+
+  .projects__grid {
+    width: 90vw;
+  }
+
+}

@@ -1,0 +1,19 @@
+.footer {
+  padding: 2% 0;
+  margin-top: 5%;
+  text-align: center;
+  background: linear-gradient(60deg, rgba(84,58,183,0.85) 0%, rgba(0,172,193,.85) 100%);
+}
+
+.footer__link {
+  font-size: calc(1rem + 0.25vw);
+  font-weight: 600;
+  color: var(--clr-fg);
+}
+
+/* @media (max-width: 600px) {
+  .footer {
+    padding: 2%;
+    margin-top: 2%;
+  }
+} */

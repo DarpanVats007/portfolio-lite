@@ -1,0 +1,105 @@
+.project {
+
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  background-color: #000000;
+	
+  background-position: center;
+	background-size: cover;
+
+}
+
+.project:before {
+
+  position: absolute;
+  border-radius: 10px;
+  padding: 2em;
+  margin: 5em;
+  text-align: center;
+}
+  
+  .image {
+    width: 40em;
+    height: 40em;
+  }
+
+.project__description {
+  margin-top: 15px;
+  color: #f0e6e6;
+  padding: 10px;
+}
+
+.project__desc__stack {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content:space-around;
+}
+.p{
+  color: #000000;
+}
+
+.project__1{
+  background-image: linear-gradient(rgba(36, 33, 33, 0.8), rgba(77,72,85, 0.7)), url("./imgs/SRBG.png");
+  background-size: 100%;
+}
+
+.project__2{
+  background-image: linear-gradient(rgba(36, 33, 33, 0.8), rgba(77,72,85, 0.7)), url("./imgs/TRIVIABG.png");
+  background-size: 100%;
+}
+
+.project__3{
+  background-image: linear-gradient(rgba(36, 33, 33, 0.8), rgba(77,72,85, 0.7)),  url("./imgs/SSBG.png");
+  background-size: 100%;
+}
+
+.project__4{
+  background-image: url('./imgs/project4.png');
+  background-size: 100%;
+}
+
+.project__desc__stack-item-1 {
+
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.project__desc__stack-item {
+  margin: 0.5em;
+  height: 20%;
+
+  font-size: calc(1rem + 1vw);
+  color: var(--clr-fg-alt);
+  
+}
+
+.project__stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project__stack-item { 
+  margin: 0.5em;
+}
+
+.project .link--icon {
+  margin: 1.5em;
+}
+
+@media (max-width: 1231px){
+
+  .project__desc__stack-item-1 {
+    width: 80%;
+    flex: 0 0 90%;
+  }
+  .project__stack {
+    margin-top: 10%;
+  }
+
+}
