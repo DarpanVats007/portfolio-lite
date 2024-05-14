@@ -18,16 +18,16 @@ const About: FC = () => {
   };
 
   return (
-    <section>
+    <section className="section section__padding border__radius" id="sections">
       <div className="about__div glass border__radius">
-        <div className="about__stack-item no-glass">
+        <div className="description">
           {name && (
-            <h2>
+            <h2 className="about__me">
               Hi, I am <span className="about__name">{name}.</span>
             </h2>
           )}
-          {role && <h3 className="about__role">A {role}.</h3>}
-          <p>{description}</p>
+          {role && <h2 className="about__role">A {role}.</h2>}
+          <p className="about__description">{description}</p>
           <div className="about__contact">
             {resume && (
               <button
@@ -49,7 +49,7 @@ const About: FC = () => {
             )}
           </div>
         </div>
-        <div className="about__stack-item no-glass border__top">
+        <div className="about__stack-item">
           <Working />
         </div>
       </div>

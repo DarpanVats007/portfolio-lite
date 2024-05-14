@@ -1,0 +1,67 @@
+/* Project.css */
+
+.project {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.project img {
+  display: block; /* Ensure the image behaves as a block element */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.project-content {
+  padding: 20px;
+  background-color: #333; /* Dark gray background color */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff; /* White text color */
+}
+
+.project-description {
+  color: #ccc; /* Light gray text color */
+}
+
+.stack-list {
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.stack-item {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #666; /* Darker gray for badges */
+  color: #fff; /* White text color */
+  border-radius: 20px;
+  margin-right: 5px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid #666; /* Border around project links */
+  border-radius: 8px; /* Rounded border */
+  padding: 10px;
+  margin-top: 20px; /* Add padding to space the links from the border */
+}
+
+.project-links a {
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for link color change */
+}
+
+.project-links a:hover {
+  color: #666; /* Change link color on hover */
+}

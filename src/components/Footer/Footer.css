@@ -10,10 +10,3 @@
   font-weight: 600;
   color: var(--clr-fg);
 }
-
-/* @media (max-width: 600px) {
-  .footer {
-    padding: 2%;
-    margin-top: 2%;
-  }
-} */

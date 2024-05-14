@@ -8,7 +8,7 @@ export const Skills: FC = () => {
 
   return (
     <section
-      className="section skills section__padding glass border__radius"
+      className="section section__padding glass border__radius"
       id="skills"
     >
       <div className="skills">

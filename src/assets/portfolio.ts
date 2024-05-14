@@ -1,6 +1,11 @@
+// import MyIcon from "./icons/react.svg";
+// import { ReactIcon } from "../components/svgComponents/reactIcon";
+// import { ReduxIcon } from "../components/svgComponents/reduxIcon";
+// import { TypeScriptIcon } from "../components/svgComponents/typescriptIcon";
+// Redux iconimport project1 from "./projects/project1.gif";
 import project1 from "./projects/project1.gif";
-import project2 from "./images/SS.png";
-import project3 from "./images/trivia.png";
+import project2 from "./projects/project2.gif";
+import project3 from "./projects/project3.gif";
 
 const header = {
   // all the properties are optional - can be left empty or deleted
@@ -26,7 +31,11 @@ const projects = [
   {
     name: "Job Posting Application",
     description: "Website for job listing, with job description panel",
-    stack: ["React", "ContextAPI", "Bootstrap"],
+    stack: [
+      { name: "React", icon: "" },
+      { name: "TypeScript", icon: "" },
+      { name: "Redux", icon: "" },
+    ],
     sourceCode: "https://github.com",
     livePreview: "https://codesandbox.io/s/eager-bartik-psu5g?file=/Readme.md",
     path: project1,
@@ -36,7 +45,11 @@ const projects = [
     name: "Sensor Data Visualization",
     description:
       "Interactive website with 400 sample size data from 10 sensors",
-    stack: ["React", "Highcharts"],
+    stack: [
+      { name: "React", icon: "" },
+      { name: "TypeScript", icon: "" },
+      { name: "Redux", icon: "" },
+    ],
     sourceCode: "https://github.com",
     livePreview:
       "https://codesandbox.io/s/nostalgic-cache-vl5fi?file=/src/Readme.md",
@@ -47,7 +60,11 @@ const projects = [
     name: "Quiz app",
     description:
       "Trivia quiz app presents user with 10 questions and shows the result in the end",
-    stack: ["TypeScript", "React"],
+    stack: [
+      { name: "React", icon: "" },
+      { name: "TypeScript", icon: "" },
+      { name: "Redux", icon: "" },
+    ],
     sourceCode: "https://github.com",
     livePreview: "https://codesandbox.io/s/sad-christian-fnn6ox",
     path: project3,
