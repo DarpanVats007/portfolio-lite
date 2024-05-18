@@ -43,17 +43,12 @@
 
 .about__name {
   font-weight: bold;
-  color: #333; /* Example text color */
+  color: #333; 
 }
-
-/* .about__role {
-  font-size: 20px;
-  margin-bottom: 10px;
-} */
 
 .about__description {
   font-size: 20px;
-  color: #666; /* Example text color */
+  color: #666; 
   margin-bottom: 20px;
 }
 
@@ -63,7 +58,7 @@
 }
 
 .btn {
-  background-color: #007bff; /* Example button color */
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -90,8 +85,6 @@
 }
 
 .about__name {
-  color: var(--clr-primary); 
-  /* TODO define color vars */
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
   font-weight: 200;
@@ -101,7 +94,6 @@
 }
 
 .about__role {
-/* TODO check why nt working */
 font-family: "Playfair Display", serif;
 font-optical-sizing: auto;
 font-size: 28px;

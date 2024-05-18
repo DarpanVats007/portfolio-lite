@@ -3,7 +3,7 @@ import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
+import { Contact } from "./components/Contact/Contact";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";

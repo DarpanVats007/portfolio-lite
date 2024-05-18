@@ -21,7 +21,7 @@ const about = {
   resume: "https://example.com",
   social: {
     linkedin: "https://www.linkedin.com/in/darpan-vats-40b8b496/",
-    github: "https://github.com",
+    github: "https://github.com/DarpanVats007",
   },
 };
 
@@ -35,9 +35,10 @@ const projects = [
       { name: "React", icon: "" },
       { name: "TypeScript", icon: "" },
       { name: "Redux", icon: "" },
+      { name: "React-bootstrap", icon: "" },
     ],
-    sourceCode: "https://github.com",
-    livePreview: "https://codesandbox.io/s/eager-bartik-psu5g?file=/Readme.md",
+    sourceCode: "https://github.com/DarpanVats007/job-posting",
+    livePreview: "https://darpanvats007.github.io/job-posting/",
     path: project1,
     backGround: "project project__1",
   },
@@ -47,12 +48,14 @@ const projects = [
       "Interactive website with 400 sample size data from 10 sensors",
     stack: [
       { name: "React", icon: "" },
-      { name: "TypeScript", icon: "" },
-      { name: "Redux", icon: "" },
+      { name: "HighCharts", icon: "" },
+      { name: "HTML", icon: "" },
+      { name: "CSS", icon: "" },
     ],
-    sourceCode: "https://github.com",
+    sourceCode:
+      "https://codesandbox.io/p/sandbox/bold-sea-jqgt6v?file=%2Fsrc%2Findex.js",
     livePreview:
-      "https://codesandbox.io/s/nostalgic-cache-vl5fi?file=/src/Readme.md",
+      "https://codesandbox.io/p/sandbox/bold-sea-jqgt6v?file=%2Fsrc%2Findex.js",
     path: project2,
     backGround: "project project__3",
   },
@@ -62,11 +65,14 @@ const projects = [
       "Trivia quiz app presents user with 10 questions and shows the result in the end",
     stack: [
       { name: "React", icon: "" },
-      { name: "TypeScript", icon: "" },
-      { name: "Redux", icon: "" },
+      { name: "Context API", icon: "" },
+      { name: "HTML", icon: "" },
+      { name: "CSS", icon: "" },
     ],
-    sourceCode: "https://github.com",
-    livePreview: "https://codesandbox.io/s/sad-christian-fnn6ox",
+    sourceCode:
+      "https://codesandbox.io/p/sandbox/trivia-app-ml3lfs?file=%2Fsrc%2Findex.js",
+    livePreview:
+      "https://codesandbox.io/p/sandbox/trivia-app-ml3lfs?file=%2Fsrc%2Findex.js",
     path: project3,
     backGround: "project project__2",
   },
@@ -75,18 +81,15 @@ const projects = [
 const skills = [
   // skills can be added or removed
   // if there are no skills, Skills section won't show up
-  "HTML",
-  "CSS",
-  "JavaScript",
+
   "TypeScript",
   "React",
   "Redux",
-  "SASS",
-  "Material UI",
+  "JavaScript",
+  "HTML",
+  "CSS preprocessor",
   "Git",
   "CI/CD",
-  "Jest",
-  "Enzyme",
 ];
 
 const contact = {

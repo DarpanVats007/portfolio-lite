@@ -1,147 +1,125 @@
-import "./Contact.css";
-
-import { ChangeEvent, FC, FocusEventHandler, FormEvent, useState } from "react";
+import { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
 
-// import { contact } from "../../assets/portfolio";
+export const Contact: FC = () => {
+  const formRef = useRef<HTMLFormElement>(null);
 
-interface ContactData {
-  name: string;
-  mobile: string;
-  company: string;
-  email: string;
-  message: string;
-}
+  const ServiceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-const Contact: FC = () => {
-  const [contactData, setContactData] = useState<ContactData>({
-    name: "",
-    mobile: "",
-    company: "",
-    email: "",
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
     message: "",
   });
-  const [errorMsg, setErrorMsg] = useState<string | undefined>();
-  const [successMsg, setSuccessMsg] = useState<boolean>(false);
 
-  const isValidEmail = (email: string) =>
-    /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email);
-  const isValidMobile = (mobileno: string) => /^[6-9]\d{9}$/.test(mobileno);
+  const [errors, setErrors] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
 
-  const validateField = (field: string, value: string) => {
-    let val = "";
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-    if (value.length) {
-      if (field === "email" && !isValidEmail(value)) {
-        val = "Invalid Email.";
-      } else if (field === "mobile" && !isValidMobile(value)) {
-        val = "Invalid Mobile Number.";
-      }
-    } else {
-      val = "All fields are required";
-    }
-
-    return val;
-  };
-
-  const handleBlur: FocusEventHandler<HTMLInputElement> = (event) => {
-    const field = validateField(event.target.name, event.target.value);
-    setErrorMsg(field);
-  };
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-
-    setContactData({
-      ...contactData,
+    setFormData((prevState) => ({
+      ...prevState,
       [name]: value,
-    });
+    }));
 
-    if (name === "mobile") {
-      setContactData({
-        ...contactData,
-        mobile: value.replace(/\D/, ""),
-      });
+    // Validate input fields and set error messages
+    if (value.trim() === "") {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: `${name === "user_name" ? "Name" : "Email"} is required`,
+      }));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: "",
+      }));
     }
   };
+
+  // Disable the button if any field is empty
+  useEffect(() => {
+    const isDisabled = Object.values(formData).some((value) => value.trim() === "");
+    setIsButtonDisabled(isDisabled);
+  }, [formData]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (
-      !contactData.name ||
-      !contactData.mobile ||
-      !contactData.email ||
-      !contactData.company ||
-      !contactData.message
-    ) {
-      setSuccessMsg(false);
-      setErrorMsg("All fields are required");
+    const hasErrors = Object.values(errors).some((error) => error !== "");
+    if (hasErrors) {
+      // Handle form submission errors
       return;
     }
 
+    // Form submission logic
     emailjs
-      .sendForm(
-        "gmail",
-        "template_vokodvy",
-        e.currentTarget,
-        "user_NfCHed56Sv9ulz3iaOgCq"
-      )
+      .sendForm(ServiceID, TemplateId, formRef.current!, {
+        publicKey: PublicKey,
+      })
       .then(
-        (result) => {
-          console.log(result.text);
-          setSuccessMsg(true);
+        () => {
+          alert("SUCCESS! Your message has been sent.");
         },
         (error) => {
-          console.log(error.text);
+          alert("FAILED... " + error.text);
         }
       );
   };
 
   return (
-    <section
-      className="section contact glass center section__padding border__radius"
-      id="contact"
-    >
-      <div id="contact">
-        <div className="form no-glass">
-          <form
-            onSubmit={handleSubmit}
-            encType="multipart/form-data"
-            autoComplete="off"
-          >
-            {!successMsg ? (
-              <>
-                <div id="errormessage" className={errorMsg ? "show" : ""}>
-                  {errorMsg}
-                </div>
-
-                <div className="field">
-                  <input
-                    name="name"
-                    type="text"
-                    className="form-control"
-                    placeholder="Name"
-                    value={contactData.name || ""}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </div>
-                {/* Other fields */}
-              </>
-            ) : (
-              <span className="message">
-                <p>Thank you for your message. We will contact you soon.</p>
-              </span>
-            )}
-          </form>
+    <section className="section contact glass center section__padding border__radius" id="contact">
+      <h2>GET IN TOUCH</h2>
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="form"
+        encType="multipart/form-data"
+        autoComplete="off"
+      >
+        <div className="field">
+          <input
+            type="text"
+            id="name"
+            name="user_name" // Updated name attribute
+            placeholder="Name"
+            value={formData.user_name}
+            onChange={handleChange}
+            required
+          />
+          {errors.user_name && <span className="error">{errors.user_name}</span>}
+          <input
+            type="email"
+            id="email"
+            name="user_email" // Updated name attribute
+            placeholder="Email"
+            value={formData.user_email}
+            onChange={handleChange}
+            required
+          />
+          {errors.user_email && <span className="error">{errors.user_email}</span>}
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+          {errors.message && <span className="error">{errors.message}</span>}
+          {Object.values(errors).some((error) => error !== "") && (
+            <p className="error">Please fill in all required fields.</p>
+          )}
+          <input type="submit" className="btn_submit" value="Send" disabled={isButtonDisabled} />
         </div>
-      </div>
+      </form>
     </section>
   );
 };
-
-export default Contact;

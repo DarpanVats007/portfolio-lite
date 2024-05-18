@@ -3,22 +3,26 @@
 }
 
 .form {
-  width: 80vw;
+  width: 100%;
   margin: auto;
   padding: 3rem 2rem;
+  font-size: 18px;
 }
 
 .field {
-  width: 40vw;
+  width: 100%;
   display: flex;
   flex-flow: column;
+  align-items: center;
+  justify-content: center;
   margin: 12px 0;
+  gap: 10px;
 }
 
 .field label {
   margin: 4px 0;
   font-size: calc(1rem + 0.15vw);
-  color: rgb(41, 86, 145);
+  /* color: rgb(41, 86, 145); */
 }
 
 ::placeholder{
@@ -28,11 +32,20 @@
 input,
 select,
 textarea {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
   border: 2px solid #e0e0e0;
   border-radius: 4px;
   padding: 8px;
+  width: 60%;
 }
 
+textarea {
+  height: 80px;
+}
 
 .sendmessage{
   color: #007bff;
@@ -59,23 +72,12 @@ textarea {
   padding: 2%;
 }
 
-.btn_submit {
-  display: block;
-  cursor: pointer;
-  padding: 2% 5% 2% 5%;
-  font-weight: 200;
-  font-size: calc(.5rem + .5vw);
-  text-transform: lowercase;
-  transition: transform 0.2s ease-in-out;
-}
-
 .btn_submit{
   background-color: #FEC930;
   color:#3f0cd8;
 }
 
 .btn_submit {
-  color: var(--clr-primary);
   border: 2px solid var(--clr-primary);
   position: relative;
   overflow: hidden;
@@ -84,7 +86,6 @@ textarea {
 
 .btn_submit:hover,
 .btn_submit:focus {
-  /* color: var(--clr-bg); */
   color: #23283e;
 }
 
