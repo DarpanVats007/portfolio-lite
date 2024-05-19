@@ -1,7 +1,8 @@
+import "./Contact.css";
+
 import { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
-
 export const Contact: FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -23,7 +24,9 @@ export const Contact: FC = () => {
 
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
@@ -32,9 +35,17 @@ export const Contact: FC = () => {
 
     // Validate input fields and set error messages
     if (value.trim() === "") {
+      let errorMessage = "";
+      if (name === "user_name") {
+        errorMessage = "Name is required";
+      } else if (name === "user_email") {
+        errorMessage = "Email is required";
+      } else if (name === "message") {
+        errorMessage = "Message is required";
+      }
       setErrors((prevErrors) => ({
         ...prevErrors,
-        [name]: `${name === "user_name" ? "Name" : "Email"} is required`,
+        [name]: errorMessage,
       }));
     } else {
       setErrors((prevErrors) => ({
@@ -46,7 +57,9 @@ export const Contact: FC = () => {
 
   // Disable the button if any field is empty
   useEffect(() => {
-    const isDisabled = Object.values(formData).some((value) => value.trim() === "");
+    const isDisabled = Object.values(formData).some(
+      (value) => value.trim() === ""
+    );
     setIsButtonDisabled(isDisabled);
   }, [formData]);
 
@@ -75,7 +88,10 @@ export const Contact: FC = () => {
   };
 
   return (
-    <section className="section contact glass center section__padding border__radius" id="contact">
+    <section
+      className="section contact glass center section__padding border__radius"
+      id="contact"
+    >
       <h2>GET IN TOUCH</h2>
       <form
         ref={formRef}
@@ -88,23 +104,27 @@ export const Contact: FC = () => {
           <input
             type="text"
             id="name"
-            name="user_name" // Updated name attribute
+            name="user_name"
             placeholder="Name"
             value={formData.user_name}
             onChange={handleChange}
             required
           />
-          {errors.user_name && <span className="error">{errors.user_name}</span>}
+          {errors.user_name && (
+            <span className="error">{errors.user_name}</span>
+          )}
           <input
             type="email"
             id="email"
-            name="user_email" // Updated name attribute
+            name="user_email"
             placeholder="Email"
             value={formData.user_email}
             onChange={handleChange}
             required
           />
-          {errors.user_email && <span className="error">{errors.user_email}</span>}
+          {errors.user_email && (
+            <span className="error">{errors.user_email}</span>
+          )}
           <textarea
             id="message"
             name="message"
@@ -117,7 +137,12 @@ export const Contact: FC = () => {
           {Object.values(errors).some((error) => error !== "") && (
             <p className="error">Please fill in all required fields.</p>
           )}
-          <input type="submit" className="btn_submit" value="Send" disabled={isButtonDisabled} />
+          <input
+            type="submit"
+            className="btn_submit"
+            value="Send"
+            disabled={isButtonDisabled}
+          />
         </div>
       </form>
     </section>
