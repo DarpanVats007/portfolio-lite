@@ -10,6 +10,9 @@ import { Header } from "./components/Header/Header";
 import { Projects } from "./components/Projects/Projects";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Skills } from "./components/Skills/Skills";
+import { SlideContainer } from "./components/spring/slideComponent";
+
+// import { SpringContainer } from "./components/spring/springContainer";
 
 const darkTheme = createTheme({
   palette: {
@@ -25,6 +28,8 @@ function App() {
         <div id="top">
           <Header />
           <main>
+            {/* <SpringContainer /> */}
+            <SlideContainer />
             <About />
             <Projects />
             <Skills />
