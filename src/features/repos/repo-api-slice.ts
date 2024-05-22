@@ -49,7 +49,7 @@ export const repositoryApiSlice = createApi({
           variables: { owner, name },
         },
       }),
-      providesTags: (result, error, { owner, name }) => [
+      providesTags: (_, __, { owner, name }) => [
         { type: "Repository", id: `${owner}/${name}` },
       ],
     }),
