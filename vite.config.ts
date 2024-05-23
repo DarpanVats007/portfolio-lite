@@ -38,5 +38,5 @@ export default defineConfig({
       ext: ".gz",
     }),
   ],
-  base: "/Portfolio-Lite/",
+  base: "/portfolio-lite/",
 });
