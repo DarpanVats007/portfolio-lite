@@ -38,5 +38,5 @@ export default defineConfig({
       ext: ".gz",
     }),
   ],
-  base: "/job-posting/",
+  base: "/Portfolio-Lite/",
 });
