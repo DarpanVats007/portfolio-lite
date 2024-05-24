@@ -3,6 +3,7 @@ import "./Contact.css";
 import { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
+
 export const Contact: FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -92,7 +93,7 @@ export const Contact: FC = () => {
       className="section contact glass center section__padding border__radius"
       id="contact"
     >
-      <h2>GET IN TOUCH</h2>
+      <h2 className="section__title border__radius">get in touch</h2>
       <form
         ref={formRef}
         onSubmit={handleSubmit}

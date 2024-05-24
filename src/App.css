@@ -57,10 +57,11 @@ main {
 }
 
 .section__title {
-  padding: 2%;
+  padding: 20px;
   text-align: center;
   margin-bottom: 1em;
   text-transform: uppercase;
+  color: var(--clr-fg);
 }
 
 .link {

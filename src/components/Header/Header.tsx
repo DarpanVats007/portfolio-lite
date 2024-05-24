@@ -68,7 +68,7 @@ export const Header = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <Name />
           </Typography>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

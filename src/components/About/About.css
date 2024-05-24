@@ -16,7 +16,7 @@
   text-align: center;
   padding-top: 10px;
   width: 100%;
-  max-width: 600px; 
+  max-width: 400px; 
   padding: 20px; 
   margin-bottom: 20px; 
   border-radius: 8px; 
@@ -33,6 +33,7 @@
 }
 
 .about__me {
+  color: var(--clr-fg);
   font-size: 38px;
   margin-bottom: 10px;
   font-family: "Josefin Sans", sans-serif;
@@ -93,6 +94,7 @@
 }
 
 .about__role {
+  color:var(--clr-fg);
 font-family: "Playfair Display", serif;
 font-optical-sizing: auto;
 font-size: 28px;

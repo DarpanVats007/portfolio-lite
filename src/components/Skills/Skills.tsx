@@ -12,7 +12,7 @@ export const Skills: FC = () => {
       id="skills"
     >
       <div className="skills">
-        <h2 className="section__title no-glass">Skills</h2>
+        <h2 className="section__title border__radius">Skills</h2>
         <ul className="skills__list">
           {skills.map((skill, index) => (
             <li key={index} className="skills__list-item btn btn--plain">
