@@ -2,7 +2,6 @@ import "./Header.css";
 
 import * as React from "react";
 
-import AdbIcon from "@mui/icons-material/Adb";
 import AppBar from "@mui/material/AppBar";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -10,9 +9,11 @@ import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { Name } from "./Name";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
+import image from "../../assets/images/profilePic.png";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -33,7 +34,6 @@ export const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -49,7 +49,7 @@ export const Header = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <Name />
           </Typography>
 
           <Typography
@@ -73,7 +73,7 @@ export const Header = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="DV" src={image} />
               </IconButton>
             </Tooltip>
             <Menu
