@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import image from "../../assets/images/profilePic.png";
+import image from "../../assets/images/profilePic.jpg";
 
 // import { Name } from "./Name";
 
