@@ -9,11 +9,12 @@ import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Name } from "./Name";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import image from "../../assets/images/profilePic.png";
+
+// import { Name } from "./Name";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -68,7 +69,7 @@ export const Header = () => {
               textDecoration: "none",
             }}
           >
-            <Name />
+            {/* <Name /> */}
           </Typography>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
