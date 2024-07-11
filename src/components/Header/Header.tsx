@@ -49,7 +49,7 @@ export const Header = () => {
               textDecoration: "none",
             }}
           >
-            <Name />
+            {/* <Name /> */}
           </Typography>
 
           <Typography
